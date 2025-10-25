@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather Predictor</title>
+</head>
+<body>
+    <h1>Weather Prediction</h1>
+    <form method="POST">
+        Temperature (C): <input type="text" name="temperature"><br>
+        Apparent Temperature (C): <input type="text" name="apparent_temperature"><br>
+        Humidity (0-1): <input type="text" name="humidity"><br>
+        Wind Speed (km/h): <input type="text" name="wind_speed"><br>
+        Wind Bearing (degrees): <input type="text" name="wind_bearing"><br>
+        Visibility (km): <input type="text" name="visibility"><br>
+        Cloud Cover (0-1): <input type="text" name="cloud_cover"><br>
+        Pressure (millibars): <input type="text" name="pressure"><br>
+        Precip Type:
+        <select name="precip_type">
+            <option value="rain">Rain</option>
+            <option value="snow">Snow</option>
+        </select><br><br>
+        <input type="submit" value="Predict Weather">
+    </form>
+
+    {% if prediction %}
+        <h2>Predicted Weather: {{ prediction }}</h2>
+    {% endif %}
+</body>
+</html>
